@@ -4,7 +4,10 @@ const addHabitButton = document.getElementById("add-habit-button");
 const habitModal = document.getElementById("habit-modal");
 const habitForm = document.getElementById("habit-form");
 const habitNameInput = document.getElementById("habit-name");
+const habitDescriptionInput = document.getElementById("habit-description");
 const cancelHabitButton = document.getElementById("cancel-habit-button");
+const habitsList = document.getElementById("habits-list");
+const habitsEmpty = document.getElementById("habits-empty");
 
 export {
     currentDateElement,
@@ -12,5 +15,8 @@ export {
     habitModal,
     habitForm,
     habitNameInput,
-    cancelHabitButton
+    habitDescriptionInput,
+    cancelHabitButton,
+    habitsList,
+    habitsEmpty
 };

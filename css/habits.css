@@ -139,3 +139,55 @@
     border-color: var(--color-primary);
     box-shadow: none;
 }
+
+.habits-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.habit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+
+    padding: var(--spacing-md);
+
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+}
+
+.habit-checkbox {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.habit-content {
+    min-width: 0;
+}
+
+.habit-content h3 {
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+}
+
+.habit-content p {
+    margin-top: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    overflow-wrap: anywhere;
+}
+
+.habit-card.completed .habit-content h3,
+.habit-card.completed .habit-content p {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

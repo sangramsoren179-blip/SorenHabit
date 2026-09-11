@@ -50,13 +50,18 @@ SorenHabit/
 - [x] Open habit modal using the Add Habit button
 - [x] Close habit modal using the Cancel button
 - [x] Automatically focus the Habit Name input
+- [x] Create and display habits
+- [x] Optional habit descriptions
+- [x] Habit card styling
+- [x] Mark habits as complete
+- [x] Toggle habit completion by clicking the card
+- [x] Strikethrough for completed habits
+- [x] Hide the empty state after creating a habit
 
 ### Planned
 
-- [ ] Create and display habits
 - [ ] Edit habits
 - [ ] Delete habits
-- [ ] Mark habits as complete
 - [ ] Daily habit tracking
 - [ ] Habit streaks
 - [ ] Progress tracking
