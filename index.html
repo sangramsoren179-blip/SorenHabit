@@ -34,6 +34,29 @@
             <section class="habits">
                 <h2>My Habits</h2>
 
+                <button id="add-habit-button" type="button">+ Add Habit</button>
+
+                <div id="habit-modal" class="habit-modal" hidden>
+                    <form id="habit-form" class="habit-form">
+                        <h3>Add Habit</h3>
+
+                        <div>
+                            <label for="habit-name">Habit Name</label>
+                            <input id="habit-name" name="habitName" type="text" required>
+                        </div>
+
+                        <div>
+                            <label for="habit-description">Description</label>
+                            <textarea id="habit-description" name="habitDescription"></textarea>
+                        </div>
+
+                        <div class="habit-form-actions">
+                            <button id="cancel-habit-button" type="button">Cancel</button>
+                            <button type="submit">Create</button>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="habits-empty">
                     <p>No habits added yet.</p>
                     <p>Start by adding your first habit.</p>

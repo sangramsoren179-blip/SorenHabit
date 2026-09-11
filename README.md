@@ -22,7 +22,9 @@ SorenHabit/
 │   └── variables.css
 ├── js/
 │   ├── app.js
-│   └── dom.js
+│   ├── date.js
+│   ├── dom.js
+│   └── habits.js
 ├── .gitignore
 ├── index.html
 └── README.md
@@ -43,10 +45,15 @@ SorenHabit/
 - [x] Styled current date
 - [x] My Habits empty state
 - [x] Styled My Habits empty state
+- [x] Habit creation modal structure
+- [x] Styled habit creation modal
+- [x] Open habit modal using the Add Habit button
+- [x] Close habit modal using the Cancel button
+- [x] Automatically focus the Habit Name input
 
 ### Planned
 
-- [ ] Add habits
+- [ ] Create and display habits
 - [ ] Edit habits
 - [ ] Delete habits
 - [ ] Mark habits as complete
@@ -55,6 +62,9 @@ SorenHabit/
 - [ ] Progress tracking
 - [ ] Statistics
 - [ ] Local data storage
+- [ ] User registration and login
+- [ ] User authentication
+- [ ] Cloud data storage for user habits
 - [ ] Responsive mobile design
 - [ ] Dark mode
 

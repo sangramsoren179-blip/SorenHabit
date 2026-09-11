@@ -1,12 +1,21 @@
-import { currentDateElement } from "./dom.js";
+import {
+    currentDateElement,
+    addHabitButton,
+    habitModal,
+    habitForm,
+    habitNameInput,
+    cancelHabitButton
+} from "./dom.js";
 
-const today = new Date();
+import { displayCurrentDate } from "./date.js";
+import { showHabitModal, hideHabitModal } from "./habits.js";
 
-const formattedDate = today.toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric"
+displayCurrentDate(currentDateElement);
+
+addHabitButton.addEventListener("click", () => {
+    showHabitModal(habitModal, habitNameInput);
 });
 
-currentDateElement.textContent = formattedDate;
+cancelHabitButton.addEventListener("click", () => {
+    hideHabitModal(habitModal);
+});
