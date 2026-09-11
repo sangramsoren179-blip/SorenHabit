@@ -14,8 +14,15 @@ A simple and modern habit tracker built from scratch using HTML, CSS, and JavaSc
 SorenHabit/
 ├── css/
 │   ├── base.css
+│   ├── habits.css
+│   ├── header.css
+│   ├── main.css
+│   ├── overview.css
 │   ├── reset.css
 │   └── variables.css
+├── js/
+│   ├── app.js
+│   └── dom.js
 ├── .gitignore
 ├── index.html
 └── README.md
@@ -29,6 +36,10 @@ SorenHabit/
 - [x] Basic HTML5 structure
 - [x] README documentation
 - [x] CSS foundation
+- [x] Styled header and main layout
+- [x] Styled Overview and My Habits sections
+- [x] ES6 module structure
+- [x] Current date display
 
 ### Planned
 
