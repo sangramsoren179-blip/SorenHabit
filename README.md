@@ -40,6 +40,7 @@ SorenHabit/
 - [x] Styled Overview and My Habits sections
 - [x] ES6 module structure
 - [x] Current date display
+- [x] Styled current date
 
 ### Planned
 

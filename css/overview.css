@@ -4,3 +4,20 @@
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
 }
+
+.overview h2 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.overview h3 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+#current-date {
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+}
