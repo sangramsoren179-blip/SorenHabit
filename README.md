@@ -41,6 +41,8 @@ SorenHabit/
 - [x] ES6 module structure
 - [x] Current date display
 - [x] Styled current date
+- [x] My Habits empty state
+- [x] Styled My Habits empty state
 
 ### Planned
 

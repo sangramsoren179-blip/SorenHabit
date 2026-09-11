@@ -4,3 +4,27 @@
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
 }
+
+.habits h2 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.habits-empty {
+    padding: var(--spacing-md);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.habits-empty p:first-child {
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+}
+
+.habits-empty p:last-child {
+    margin-top: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
