@@ -24,7 +24,8 @@ SorenHabit/
 │   ├── app.js
 │   ├── date.js
 │   ├── dom.js
-│   └── habits.js
+│   ├── habits.js
+│   └── storage.js
 ├── .gitignore
 ├── index.html
 └── README.md
@@ -57,6 +58,10 @@ SorenHabit/
 - [x] Toggle habit completion by clicking the card
 - [x] Strikethrough for completed habits
 - [x] Hide the empty state after creating a habit
+- [x] Save habits using localStorage
+- [x] Load saved habits after refreshing
+- [x] Save habit completion status
+- [x] Restore completion status after refreshing
 
 ### Planned
 
@@ -66,7 +71,8 @@ SorenHabit/
 - [ ] Habit streaks
 - [ ] Progress tracking
 - [ ] Statistics
-- [ ] Local data storage
+- [ ] Personal notes and extra information
+- [ ] Advanced local data management
 - [ ] User registration and login
 - [ ] User authentication
 - [ ] Cloud data storage for user habits

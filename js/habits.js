@@ -7,7 +7,7 @@ function hideHabitModal(habitModal) {
     habitModal.hidden = true;
 }
 
-function createHabitCard(habit, habitsList) {
+function createHabitCard(habit, habitsList, onCompletionChange) {
     const habitCard = document.createElement("article");
     habitCard.className = "habit-card";
 
@@ -30,16 +30,22 @@ function createHabitCard(habit, habitsList) {
     habitCheckbox.type = "checkbox";
     habitCheckbox.className = "habit-checkbox";
     habitCheckbox.setAttribute("aria-label", `Mark ${habit.name} as complete`);
+    habitCheckbox.checked = habit.completed;
 
     habitCard.appendChild(habitCheckbox);
     habitCard.appendChild(habitContent);
+    habitCard.classList.toggle("completed", habitCheckbox.checked);
 
     habitCard.addEventListener("click", (event) => {
         if (event.target !== habitCheckbox) {
             habitCheckbox.checked = !habitCheckbox.checked;
         }
-
+    
+        habit.completed = habitCheckbox.checked;
+    
         habitCard.classList.toggle("completed", habitCheckbox.checked);
+    
+        onCompletionChange(habit);
     });
 
     habitsList.appendChild(habitCard);

@@ -16,8 +16,23 @@ import {
     hideHabitModal,
     createHabitCard
 } from "./habits.js";
+import { saveHabits, loadHabits } from "./storage.js";
+
+let habits = loadHabits();
+
+function handleCompletionChange() {
+    saveHabits(habits);
+}
 
 displayCurrentDate(currentDateElement);
+
+habits.forEach((habit) => {
+    createHabitCard(habit, habitsList, handleCompletionChange);
+});
+
+if (habits.length > 0) {
+    habitsEmpty.hidden = true;
+}
 
 addHabitButton.addEventListener("click", () => {
     showHabitModal(habitModal, habitNameInput);
@@ -35,10 +50,14 @@ habitForm.addEventListener("submit", (event) => {
 
     const habit = {
         name: habitName,
-        description: habitDescription
+        description: habitDescription,
+        completed: false
     };
-
-    createHabitCard(habit, habitsList);
+    
+    habits.push(habit);
+    saveHabits(habits);
+    
+    createHabitCard(habit, habitsList, handleCompletionChange);
 
     habitsEmpty.hidden = true;
 
