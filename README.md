@@ -62,6 +62,8 @@ SorenHabit/
 - [x] Load saved habits after refreshing
 - [x] Save habit completion status
 - [x] Restore completion status after refreshing
+- [x] More Options button for each habit
+- [x] Display More Options menu for a selected habit
 
 ### Planned
 

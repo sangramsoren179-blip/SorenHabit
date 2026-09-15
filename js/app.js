@@ -6,6 +6,7 @@ import {
     habitNameInput,
     habitDescriptionInput,
     cancelHabitButton,
+    moreOptionsMenu,
     habitsList,
     habitsEmpty
 } from "./dom.js";
@@ -19,15 +20,25 @@ import {
 import { saveHabits, loadHabits } from "./storage.js";
 
 let habits = loadHabits();
+let selectedHabit = null;
 
 function handleCompletionChange() {
     saveHabits(habits);
 }
 
+function handleMoreOptions(habit) {
+    selectedHabit = habit;
+}
+
 displayCurrentDate(currentDateElement);
 
 habits.forEach((habit) => {
-    createHabitCard(habit, habitsList, handleCompletionChange);
+    createHabitCard(
+        habit,
+        habitsList,
+        moreOptionsMenu,
+        handleCompletionChange
+    );
 });
 
 if (habits.length > 0) {
@@ -53,14 +64,34 @@ habitForm.addEventListener("submit", (event) => {
         description: habitDescription,
         completed: false
     };
-    
+
     habits.push(habit);
     saveHabits(habits);
-    
-    createHabitCard(habit, habitsList, handleCompletionChange);
+
+    createHabitCard(
+        habit,
+        habitsList,
+        moreOptionsMenu,
+        handleMoreOptions,
+        handleCompletionChange
+    );
 
     habitsEmpty.hidden = true;
 
     habitForm.reset();
     hideHabitModal(habitModal);
+});
+
+document.addEventListener("click", (event) => {
+    if (moreOptionsMenu.hidden) {
+        return;
+    }
+
+    const clickedInsideMenu = moreOptionsMenu.contains(event.target);
+    const clickedMoreButton = event.target.closest(".more-options-button");
+
+    if (!clickedInsideMenu && !clickedMoreButton) {
+        moreOptionsMenu.hidden = true;
+        delete moreOptionsMenu.dataset.habitName;
+    }
 });
