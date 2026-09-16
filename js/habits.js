@@ -78,23 +78,41 @@ function createHabitCard(
         moreOptionsMenu.style.left = `${buttonRect.right - menuWidth}px`;
     });
 
+    habitCheckbox.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        if (!moreOptionsMenu.hidden) {
+            event.preventDefault();
+
+            moreOptionsMenu.hidden = true;
+            delete moreOptionsMenu.dataset.habitName;
+        }
+    });
+
+    habitCheckbox.addEventListener("change", () => {
+        habit.completed = habitCheckbox.checked;
+
+        habitCard.classList.toggle("completed", habitCheckbox.checked);
+
+        onCompletionChange(habit);
+    });
+
     habitCard.addEventListener("click", (event) => {
-        if (event.target === moreOptionsButton) {
+        if (event.target.closest(".habit-checkbox")) {
+            return;
+        }
+
+        if (event.target.closest(".more-options-button")) {
             return;
         }
 
         if (!moreOptionsMenu.hidden) {
             moreOptionsMenu.hidden = true;
             delete moreOptionsMenu.dataset.habitName;
-
-            if (event.target !== habitCheckbox) {
-                return;
-            }
+            return;
         }
 
-        if (event.target !== habitCheckbox) {
-            habitCheckbox.checked = !habitCheckbox.checked;
-        }
+        habitCheckbox.checked = !habitCheckbox.checked;
 
         habit.completed = habitCheckbox.checked;
 

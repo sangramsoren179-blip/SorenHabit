@@ -37,6 +37,7 @@ habits.forEach((habit) => {
         habit,
         habitsList,
         moreOptionsMenu,
+        handleMoreOptions,
         handleCompletionChange
     );
 });

@@ -63,7 +63,10 @@ SorenHabit/
 - [x] Save habit completion status
 - [x] Restore completion status after refreshing
 - [x] More Options button for each habit
-- [x] Display More Options menu for a selected habit
+- [x] Open and close the More Options menu
+- [x] Position the More Options menu beside the selected habit
+- [x] Close the More Options menu when clicking outside
+- [x] Prevent accidental completion changes while the menu is open
 
 ### Planned
 
