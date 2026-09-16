@@ -7,6 +7,14 @@ import {
     habitDescriptionInput,
     cancelHabitButton,
     moreOptionsMenu,
+    deleteHabitOption,
+    deleteModal,
+    deleteForm,
+    deleteMessage,
+    mathQuestion,
+    mathAnswerInput,
+    deleteError,
+    cancelDeleteButton,
     habitsList,
     habitsEmpty
 } from "./dom.js";
@@ -18,9 +26,14 @@ import {
     createHabitCard
 } from "./habits.js";
 import { saveHabits, loadHabits } from "./storage.js";
+import {
+    showDeleteModal,
+    hideDeleteModal
+} from "./delete.js";
 
 let habits = loadHabits();
 let selectedHabit = null;
+let correctDeleteAnswer = null;
 
 function handleCompletionChange() {
     saveHabits(habits);
@@ -54,6 +67,24 @@ cancelHabitButton.addEventListener("click", () => {
     hideHabitModal(habitModal);
 });
 
+deleteHabitOption.addEventListener("click", () => {
+    if (!selectedHabit) {
+        return;
+    }
+
+    moreOptionsMenu.hidden = true;
+    delete moreOptionsMenu.dataset.habitName;
+
+    correctDeleteAnswer = showDeleteModal(
+        deleteModal,
+        deleteMessage,
+        mathQuestion,
+        mathAnswerInput,
+        deleteError,
+        selectedHabit
+    );
+});
+
 habitForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -81,6 +112,45 @@ habitForm.addEventListener("submit", (event) => {
 
     habitForm.reset();
     hideHabitModal(habitModal);
+});
+
+deleteForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const userAnswer = Number(mathAnswerInput.value);
+
+    if (userAnswer !== correctDeleteAnswer) {
+        deleteError.textContent = "Incorrect answer. Try again.";
+        deleteError.hidden = false;
+        mathAnswerInput.focus();
+        return;
+    }
+
+    habits = habits.filter((habit) => habit !== selectedHabit);
+
+    saveHabits(habits);
+    
+    const habitCard = habitsList.querySelector(
+        `[data-habit-name="${CSS.escape(selectedHabit.name)}"]`
+    );
+    
+    if (habitCard) {
+        habitCard.remove();
+    }
+    
+    habitsEmpty.hidden = habits.length > 0;
+    
+    hideDeleteModal(deleteModal);
+    
+    selectedHabit = null;
+    correctDeleteAnswer = null;
+});
+
+cancelDeleteButton.addEventListener("click", () => {
+    hideDeleteModal(deleteModal);
+
+    selectedHabit = null;
+    correctDeleteAnswer = null;
 });
 
 document.addEventListener("click", (event) => {

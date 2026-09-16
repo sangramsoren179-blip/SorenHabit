@@ -16,6 +16,7 @@ function createHabitCard(
 ) {
     const habitCard = document.createElement("article");
     habitCard.className = "habit-card";
+    habitCard.dataset.habitName = habit.name;
 
     const habitContent = document.createElement("div");
     habitContent.className = "habit-content";
@@ -122,6 +123,7 @@ function createHabitCard(
     });
 
     habitsList.appendChild(habitCard);
+    return habitCard;
 }
 
 export {

@@ -14,6 +14,7 @@ A simple and modern habit tracker built from scratch using HTML, CSS, and JavaSc
 SorenHabit/
 ├── css/
 │   ├── base.css
+│   ├── delete.css
 │   ├── habits.css
 │   ├── header.css
 │   ├── main.css
@@ -23,6 +24,7 @@ SorenHabit/
 ├── js/
 │   ├── app.js
 │   ├── date.js
+│   ├── delete.js
 │   ├── dom.js
 │   ├── habits.js
 │   └── storage.js
@@ -67,11 +69,17 @@ SorenHabit/
 - [x] Position the More Options menu beside the selected habit
 - [x] Close the More Options menu when clicking outside
 - [x] Prevent accidental completion changes while the menu is open
+- [x] Delete-confirmation modal
+- [x] Generate a new math question for every deletion attempt
+- [x] Verify the math answer before deletion
+- [x] Delete the selected habit after the correct answer
+- [x] Save the updated habits after deletion
+- [x] Show the empty state after deleting all habits
+- [x] Cancel deletion without changing the habit list
 
 ### Planned
 
 - [ ] Edit habits
-- [ ] Delete habits
 - [ ] Daily habit tracking
 - [ ] Habit streaks
 - [ ] Progress tracking

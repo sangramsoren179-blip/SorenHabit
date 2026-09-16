@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/overview.css">
     <link rel="stylesheet" href="css/habits.css">
+    <link rel="stylesheet" href="css/delete.css">
 </head>
 <body>
 
@@ -59,6 +60,34 @@
 
                 <div id="more-options-menu" class="more-options-menu" hidden>
                     <button id="delete-habit-option" type="button">Delete habit</button>
+                </div>
+                
+                <div id="delete-modal" class="delete-modal" hidden>
+                    <form id="delete-form" class="delete-form">
+                        <h3>Delete Habit</h3>
+                
+                        <p id="delete-message"></p>
+                
+                        <p id="math-question"></p>
+                
+                        <div>
+                            <label for="math-answer">Your answer</label>
+                            <input
+                                id="math-answer"
+                                name="mathAnswer"
+                                type="number"
+                                required
+                                autocomplete="off"
+                            >
+                        </div>
+                
+                        <p id="delete-error" class="delete-error" hidden></p>
+                
+                        <div class="delete-form-actions">
+                            <button id="cancel-delete-button" type="button">Cancel</button>
+                            <button type="submit">Delete</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div id="habits-list" class="habits-list"></div>
