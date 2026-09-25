@@ -1,3 +1,13 @@
+let selectedHabit = null;
+
+function setSelectedHabit(habit) {
+    selectedHabit = habit;
+}
+
+function getSelectedHabit() {
+    return selectedHabit;
+}
+
 function generateMathQuestion() {
     const operators = ["+", "-", "*", "/"];
     const operator = operators[Math.floor(Math.random() * operators.length)];
@@ -72,5 +82,7 @@ function hideDeleteModal(deleteModal) {
 export {
     generateMathQuestion,
     showDeleteModal,
-    hideDeleteModal
+    hideDeleteModal,
+    setSelectedHabit,
+    getSelectedHabit
 };

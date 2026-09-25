@@ -1,10 +1,9 @@
-function showHabitModal(habitModal, habitNameInput) {
-    habitModal.hidden = false;
-    habitNameInput.focus();
-}
-
-function hideHabitModal(habitModal) {
-    habitModal.hidden = true;
+function createHabit(name, description) {
+    return {
+        name,
+        description,
+        completed: false
+    };
 }
 
 function createHabitCard(
@@ -127,7 +126,6 @@ function createHabitCard(
 }
 
 export {
-    showHabitModal,
-    hideHabitModal,
+    createHabit,
     createHabitCard
 };

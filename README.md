@@ -22,11 +22,29 @@ SorenHabit/
 │   ├── reset.css
 │   └── variables.css
 ├── js/
+│   ├── date/
+│   │   ├── date-dom.js
+│   │   └── date.js
+│   ├── delete/
+│   │   ├── delete-dom.js
+│   │   ├── delete-form.js
+│   │   ├── delete-init.js
+│   │   └── delete.js
+│   ├── habits/
+│   │   ├── habit-form.js
+│   │   ├── habit-renderer.js
+│   │   ├── habits-dom.js
+│   │   ├── habits-init.js
+│   │   └── habits.js
+│   ├── menu/
+│   │   ├── menu-dom.js
+│   │   ├── menu-init.js
+│   │   └── menu.js
+│   ├── modal/
+│   │   ├── modal-dom.js
+│   │   ├── modal-init.js
+│   │   └── modal.js
 │   ├── app.js
-│   ├── date.js
-│   ├── delete.js
-│   ├── dom.js
-│   ├── habits.js
 │   └── storage.js
 ├── .gitignore
 ├── index.html
@@ -76,6 +94,10 @@ SorenHabit/
 - [x] Save the updated habits after deletion
 - [x] Show the empty state after deleting all habits
 - [x] Cancel deletion without changing the habit list
+- [x] Feature-based JavaScript folder structure
+- [x] Feature-specific DOM modules
+- [x] Feature-specific initialization modules
+- [x] Initialization-only app entry point
 
 ### Planned
 
@@ -85,6 +107,8 @@ SorenHabit/
 - [ ] Progress tracking
 - [ ] Statistics
 - [ ] Personal notes and extra information
+- [ ] Sidebar navigation
+- [ ] Multiple task types
 - [ ] Advanced local data management
 - [ ] User registration and login
 - [ ] User authentication
