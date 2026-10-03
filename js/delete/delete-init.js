@@ -46,7 +46,7 @@ function handleDeleteOption() {
 
 function initializeDelete() {
     getDeleteHabitOption().addEventListener("click", handleDeleteOption);
-    
+
     setupDeleteForm(
         getDeleteForm(),
         getMathAnswerInput(),
@@ -61,10 +61,10 @@ function initializeDelete() {
         hideDeleteModal,
         getDeleteModal()
     );
-    
+
     getCancelDeleteButton().addEventListener("click", () => {
         hideDeleteModal(getDeleteModal());
-    
+
         setSelectedHabit(null);
         correctDeleteAnswer = null;
     });

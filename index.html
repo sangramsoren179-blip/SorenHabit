@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/overview.css">
     <link rel="stylesheet" href="css/habits.css">
     <link rel="stylesheet" href="css/delete.css">
+    <link rel="stylesheet" href="css/bottom-navigation.css">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
 
         <main>
 
-            <section class="overview">
+            <section id="overview" class="overview" data-page hidden>
                 <h2>Overview</h2>
 
                 <div>
@@ -32,7 +33,7 @@
                 </div>
             </section>
 
-            <section class="habits">
+            <section id="habits" class="habits" data-page hidden>
                 <h2>My Habits</h2>
 
                 <button id="add-habit-button" type="button">+ Add Habit</button>
@@ -61,15 +62,15 @@
                 <div id="more-options-menu" class="more-options-menu" hidden>
                     <button id="delete-habit-option" type="button">Delete habit</button>
                 </div>
-                
+
                 <div id="delete-modal" class="delete-modal" hidden>
                     <form id="delete-form" class="delete-form">
                         <h3>Delete Habit</h3>
-                
+
                         <p id="delete-message"></p>
-                
+
                         <p id="math-question"></p>
-                
+
                         <div>
                             <label for="math-answer">Your answer</label>
                             <input
@@ -80,9 +81,9 @@
                                 autocomplete="off"
                             >
                         </div>
-                
+
                         <p id="delete-error" class="delete-error" hidden></p>
-                
+
                         <div class="delete-form-actions">
                             <button id="cancel-delete-button" type="button">Cancel</button>
                             <button type="submit">Delete</button>
@@ -99,6 +100,11 @@
             </section>
 
         </main>
+
+        <footer>
+            <nav class="bottom-navigation">
+            </nav>
+        </footer>
 
     </div>
 

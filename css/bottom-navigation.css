@@ -1,0 +1,34 @@
+.bottom-navigation {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    align-items: center;
+    overflow-x: auto;
+    border-top: 1px solid;
+    scrollbar-width: none;
+    background-color: var(--color-surface);
+}
+
+.bottom-navigation a {
+    flex: 0 0 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-navigation a.active {
+    color: var(--color-primary);
+}
+
+.bottom-navigation img {
+    width: 28px;
+    height: 28px;
+    filter: invert(1);
+}
+
+.bottom-navigation a.active img {
+    filter: invert(45%) sepia(90%) saturate(1500%) hue-rotate(170deg);
+}

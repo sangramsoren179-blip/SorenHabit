@@ -17,7 +17,7 @@ function renderHabits(
             handleCompletionChange
         );
     });
-    
+
     habitsEmpty.hidden = habits.length > 0;
 }
 

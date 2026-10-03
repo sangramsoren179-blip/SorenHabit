@@ -2,7 +2,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-lg);
+    padding: 80px var(--spacing-lg) 84px;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);

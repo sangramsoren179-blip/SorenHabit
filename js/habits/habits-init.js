@@ -31,7 +31,7 @@ function initializeHabits() {
         handleCompletionChange,
         getHabitsEmpty()
     );
-    
+
     setupHabitForm(
         habits,
         handleMoreOptions,
